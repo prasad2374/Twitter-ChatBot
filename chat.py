@@ -121,8 +121,8 @@ def main():
                 st.session_state.conversation.append((user_input, matched_question, answer))
                 st.experimental_rerun()  # Rerun the app to clear the input box
 
-        # Display the conversation history
-        for i, (user_q, matched_q, bot_a) in enumerate(st.session_state.conversation):
+        # Display the conversation history in reverse order
+        for i, (user_q, matched_q, bot_a) in enumerate(reversed(st.session_state.conversation)):
             st.markdown(f"""
                 <div class="conversation">
                     <p><strong>You:</strong> {user_q}</p>
